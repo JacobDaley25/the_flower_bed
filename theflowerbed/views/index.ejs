@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>The Flower-Bed</title>
+  </head>
+  <body>
+    <div class='container'>
+    <h1>Welcome to The FlowerBed!</h1>
+      <%- include ('./partials/nav') %>
+    <div class = 'posts'>
+      <h1>Bud Buddies</h1>
+      <% for (let i =0; i<data.length;i++) { %>
+
+
+<a href= '/TheFlowerBed/<%=data[i]._id%>'><%=data[i].title%></a>
+        <p><%=data[i].blog%></p>
+
+
+        <div class ='leaf-buttons'>
+        <form action="/TheFlowerBed/<%=data[i]._id%>?_method=DELETE" method="POST">
+            <input type="submit" value="DELETE" />
+        </form>
+        <div class = 'edit-button'>
+        <a href="/TheFlowerBed/<%=data[i]._id%>/edit">Edit</a>
+      </div>
+      </div>
+
+      <% } %>
+    </div>
+
+    <footer>
+      <h3>Check out our other socials!<h3>
+      <p>Socials will go here</p>
+
+    </footer>
+
+
+
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+        <%- include('./partials/nav.ejs') %>
+    <div class = 'container'>
+      <h1> New Post </h1>
+      <form action="/TheFlowerBed" method="POST">
+        title:<input type='text' name='title' value='' /><br/>
+        blog: <input type='text' name='blog' value=''><br/>
+        <input type='submit' value='Post to Feed'/>
+      </form>
+  </body>
+</html>

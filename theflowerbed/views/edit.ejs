@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+      <%- include('./partials/nav.ejs') %>
+  <div class='container'>
+    <h1>Edit Post</h1>
+
+    <form action="/TheFlowerBed/<%=data.id%>?_method=PUT" method="POST">
+      title: <input type='string' name='title' value="<%=data.title%>"/><br/>
+      blog: <input type='string' name='blog' value='<%=data.blog%>'/><br/>
+      <input type=submit value='Submit Changes'>
+    </form>
+  </div>
+
+</body>
+</html>
