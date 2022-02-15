@@ -3,11 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>The Flower-Bed</title>
+    <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
     <div class='container'>
     <h1>Welcome to The FlowerBed!</h1>
-      <%- include ('./partials/nav') %>
+    <nav>
+        <%- include ('./partials/nav') %>
+        <a href='/TheFlowerBed/MyProfile/<%=user._id%>'>MyProfile</a>
+  </nav>
+  <div id='searchWrapper'>
+    <input type ='text' name='searchBar' id='searchBar' placeholder='search for another user'/>
+  </div>
     <div class = 'posts'>
       <h1>Bud Buddies</h1>
       <% for (let i =0; i<data.length;i++) { %>

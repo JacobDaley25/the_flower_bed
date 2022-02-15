@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class = 'container'>
+      <nav>
+        <%- include ('./partials/nav') %>
+      </nav>
+    <h1> Your Leaves </h1>
+    <ul>
+    <% for (let i = 0; i<yourLeaves.length;i++) {%>
+      <li>
+        <%=yourLeaves[i].title%><br/>
+          <%=yourLeaves[i].blog%><br/>
+          <%=yourLeaves[i].likes%>
+      </li>
+    <%}%>
+  </div>
+  </body>
+</html>

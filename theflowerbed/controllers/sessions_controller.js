@@ -20,7 +20,7 @@ sessions.post('/', (req, res) => {
       console.log('error');
       res.send('oops we had a problem')
     }if (!foundUser) {
-      res.send('<a href="/new">Sorry, no user found </a>')
+      res.send('<a href="/users/new">Sorry, no user found </a>')
     }else{
       //user is found
       //check if passwords match

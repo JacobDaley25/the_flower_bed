@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <nav>
+        <%- include ('./partials/nav') %>
+    </nav>
+    <div class='container'>
+      <ul>
+        <li><%=foundProfile.username%></li>
+        <li><%=foundProfile.profilePicture%></li>
+        <li><%=foundProfile.followers%></li>
+        <li><%=foundProfile.following%></li>
+      </ul>
+      <nav>
+        <a href='/TheFlowerBed/MyProfile/:_id/myLeaves' id='profile-leaves'> Leaves </a>
+        <a href='#' id='profile-likes'> Likes </a>
+      </nav>
+
+  </body>
+</html>
