@@ -5,7 +5,7 @@ const methodOverride = require('method-override')
 const userController = require('./controllers/users_controller.js')
 const sessionController = require('./controllers/sessions_controller.js')
 const postController = require('./controllers/post-controller.js')
-const dotenv = require('dotenv').config()
+)
 const session = require('express-session')
 const bcrypt = require('bcrypt')
 const saltRounds = 10
@@ -21,6 +21,8 @@ const Leaf = require('./models/leafSchema.js')
 const LeafSeed = require('./models/seed.js')
 const User = require('./models/users.js')
 const db = mongoose.connection
+require('dotenv').config()
+
 
 const PORT = process.env.PORT || 3000;
 
@@ -40,7 +42,8 @@ app.set('view engine', 'ejs');
 app.use('/users', userController)
 app.use('/posts', postController)
 app.use(express.static('public'))
-app.use(express.urlencoded({extended:true}))
+app.use(express.urlencoded({extended:false}))
+app.use(express.json())
 app.use(methodOverride('_method'))
 app.use(isAuthenticated)
 // Leaf.create(LeafSeed, (error, data) => {
