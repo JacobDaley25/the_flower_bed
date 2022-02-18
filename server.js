@@ -22,6 +22,9 @@ const LeafSeed = require('./models/seed.js')
 const User = require('./models/users.js')
 const db = mongoose.connection
 
+const PORT = process.env.PORT || 3000;
+
+const MONGODB_URI = process.env.MONGODB_URI;
 //MIDDLEWARE
 
 app.use(
