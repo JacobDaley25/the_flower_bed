@@ -55,13 +55,14 @@ app.get('/TheFlowerBed/MyProfile/:_id', isAuthenticated, (req, res) => {
     res.render('profile-show.ejs',
     {
       currentUser: req.session.currentUser,
-      foundProfile: req.session.currentUser
+      foundProfile: req.session.currentUser,
+      user: req.session.currentUser
     }
   )
   })
 })
 app.get('/TheFlowerBed/MyProfile/:_id/myLeaves', isAuthenticated, (req,res) => {
-  if (Leaf.userId === req.body.userId){
+  if (Leaf.userId === req.session.user_Id){
     Leaf.find({id:req.params.userId}, (error,yourLeaves)=>{
       res.render('myleaves.ejs',
       {
@@ -92,18 +93,18 @@ app.delete('/TheFlowerBed/:_id', isAuthenticated, (req, res) => {
   }
 })
 
-// app.get('/TheFlowerBed/:_id/edit', (req,res) => {
-//   Leaf.findById(req.params._id, (error,selectedLeaf) => {
-//
-//     res.render(
-//       'edit.ejs',
-//       {
-//         data: selectedLeaf,
-//         currentUser: req.session.currentUser
-//       }
-//     );
-//   })
-// })
+app.get('/TheFlowerBed/:_id/edit', (req,res) => {
+  Leaf.findById(req.params._id, (error,selectedLeaf) => {
+
+    res.render(
+      'edit.ejs',
+      {
+        data: selectedLeaf,
+        currentUser: req.session.currentUser
+      }
+    );
+  })
+})
 
 // app.get('/TheFlowerBed/new', (req, res) => {
 //   res.render('new.ejs',
@@ -113,17 +114,17 @@ app.delete('/TheFlowerBed/:_id', isAuthenticated, (req, res) => {
 // );
 // })
 
-// app.get('/TheFlowerBed/:_id', (req,res) => {
-//   Leaf.findById(req.params._id, (error,foundLeaf) => {
-//     res.render(
-//       'show.ejs',
-//       {
-//         leaf:foundLeaf,
-//         currentUser: req.session.currentUser
-//       }
-//     )
-//   })
-// })
+app.get('/TheFlowerBed/:_id', (req,res) => {
+  Leaf.findById(req.params._id, (error,foundLeaf) => {
+    res.render(
+      'show.ejs',
+      {
+        leaf:foundLeaf,
+        currentUser: req.session.currentUser
+      }
+    )
+  })
+})
 
 
 app.get('/TheFlowerBed', (req,res) => {

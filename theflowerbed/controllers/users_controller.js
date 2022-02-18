@@ -14,7 +14,7 @@ users.post('/', (req,res) => {
       console.log('error');
     }else {
     console.log('user is created', createdUser);
-    res.redirect('/')
+    res.redirect('/sessions/new')
     }
   })
 })
@@ -25,7 +25,8 @@ users.post('/', (req,res) => {
 users.get('/new',(req, res) => {
   res.render('users-new.ejs',{
 
-  currentUser: req.session.currentUser
+  currentUser: req.session.currentUser,
+  
   })
 })
 

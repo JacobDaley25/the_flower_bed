@@ -4,13 +4,27 @@
     <meta charset="utf-8">
     <title></title>
   </head>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Carter+One&family=Encode+Sans+Condensed&family=Unna&display=swap" rel="stylesheet">
   <body>
-        <%- include('./partials/nav.ejs') %>
+    <h1 class='title'>The Flower Bed</h1>
     <div class = 'container'>
+      <div class ='header'>
+
+
+    <nav>
+        <%- include ('./partials/nav') %>
+    </nav>
+    <div id='searchWrapper'>
+    <input type ='text' name='searchBar' id='searchBar' placeholder='search for another user'/>
+    </div>
+    </div>
       <h1> New Account </h1>
       <form action="/users?_method=PUT" method="POST">
         username:<input type='text' name='username' value='' /><br/>
-        password: <input type='text' name='password' value=''><br/>
+        password: <input type='password' name='password' value=''><br/>
         Profile Picture:<input type='text' name= 'profilePicture'
         value=''><br/>
         Email:<input type='text' name='email' value=''><br/>

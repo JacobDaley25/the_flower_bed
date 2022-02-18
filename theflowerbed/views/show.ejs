@@ -3,13 +3,30 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Carter+One&family=Encode+Sans+Condensed&family=Unna&display=swap" rel="stylesheet">
   </head>
   <body>
-        <%- include('./partials/nav.ejs') %>
 
+    <div class = 'container'>
+      <div class ='header'>
+
+
+    <nav>
+        <%- include ('./partials/nav') %>
+        <button type="button" id='5'><a href='/TheFlowerBed/MyProfile/<%=user._id%>'>MyProfile</a></button>
+    </nav>
+    <div id='searchWrapper'>
+    <input type ='text' name='searchBar' id='searchBar' placeholder='search for another user'/>
+    </div>
+    </div>
         <div class = 'selected-leaf'>
           <h1 class = 'leaf-title-show'><%=leaf.title%></h1>
           <p><%=leaf.blog%></p>
-          <p2><%=leaf.replies%>
+          <p2><%=leaf.replies%></p>
+        </div>
+      </div>
   </body>
 </html>
