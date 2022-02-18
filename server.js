@@ -1,10 +1,10 @@
-require('dotenv').config()
+
 const mongoose = require('mongoose');
 const express = require('express');
 const app = express();
 const methodOverride = require('method-override')
-
-
+const dotenv = require('dotenv')
+require('dotenv').config()
 
 
 
@@ -32,9 +32,9 @@ const db = mongoose.connection;
 
 const PORT = process.env.PORT || 3000;
 
-const MONGODB_URI = process.env.MONGODB_URI;
+const mongoURI = String(process.env.MONGODBURI);
 
-mongoose.connect(MONGODB_URI);
+mongoose.connect(mongoURI);
 
 //MIDDLEWARE
 
@@ -116,7 +116,8 @@ app.get('/TheFlowerBed/:_id/edit', (req,res) => {
       'edit.ejs',
       {
         data: selectedLeaf,
-        currentUser: req.session.currentUser
+        currentUser: req.session.currentUser,
+        user: req.session.currentUser
       }
     );
   })
@@ -136,7 +137,8 @@ app.get('/TheFlowerBed/:_id', (req,res) => {
       'show.ejs',
       {
         leaf:foundLeaf,
-        currentUser: req.session.currentUser
+        currentUser: req.session.currentUser,
+        user: req.session.currentUser
       }
     )
   })
