@@ -1,5 +1,5 @@
 
-const bcrypt = require('bcrypt')
+const bcrypt = require('../server.js').bcrypt
 const express = require('express')
 const users = express.Router()
 const User = require('../models/users.js')
@@ -26,7 +26,7 @@ users.get('/new',(req, res) => {
   res.render('users-new.ejs',{
 
   currentUser: req.session.currentUser,
-  
+
   })
 })
 

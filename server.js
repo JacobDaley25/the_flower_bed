@@ -8,6 +8,7 @@ const postController = require('./controllers/post-controller.js')
 const dotenv = require('dotenv').config()
 const session = require('express-session')
 const bcrypt = require('bcrypt')
+const saltRounds = 10
 const isAuthenticated = (req, res, next) => {
   if (req.session.currentUser) {
     return next()
@@ -179,3 +180,4 @@ mongoose.connect('mongodb://localhost:27017/TheFlowerBed'), () => {
 app.listen(3000, () => {
   console.log('listening...');
 })
+module.exports.bcrypt = bcrypt;

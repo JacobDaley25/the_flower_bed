@@ -1,4 +1,4 @@
-const bcrypt = require('bcrypt')
+const bcrypt = require('../server.js').bcrypt
 const express = require('express')
 const sessions = express.Router()
 const User = require('../models/users.js')
