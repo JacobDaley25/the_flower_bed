@@ -5,7 +5,7 @@ const methodOverride = require('method-override')
 const userController = require('./controllers/users_controller.js')
 const sessionController = require('./controllers/sessions_controller.js')
 const postController = require('./controllers/post-controller.js')
-)
+
 const session = require('express-session')
 const bcrypt = require('bcrypt')
 const saltRounds = 10
