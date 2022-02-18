@@ -172,7 +172,8 @@ app.put('/:_id/follow', async (req,res)=>{
 })
 
 
-
+mongoose.connect(MONGODB_URI , { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }
+);
 mongoose.connect('mongodb://localhost:27017/TheFlowerBed'), () => {
   console.log('The connection with mongod is established');
 }
