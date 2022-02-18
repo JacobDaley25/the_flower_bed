@@ -1,3 +1,4 @@
+require('dotenv').config()
 const mongoose = require('mongoose');
 const express = require('express');
 const app = express();
@@ -21,7 +22,7 @@ const Leaf = require('./models/leafSchema.js')
 const LeafSeed = require('./models/seed.js')
 const User = require('./models/users.js')
 const db = mongoose.connection;
-require('dotenv').config()
+
 
 
 const PORT = process.env.PORT || 3000;
