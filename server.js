@@ -3,6 +3,11 @@ const mongoose = require('mongoose');
 const express = require('express');
 const app = express();
 const methodOverride = require('method-override')
+
+
+
+
+
 const userController = require('./controllers/users_controller.js')
 const sessionController = require('./controllers/sessions_controller.js')
 const postController = require('./controllers/post-controller.js')
@@ -28,6 +33,12 @@ const db = mongoose.connection;
 const PORT = process.env.PORT || 3000;
 
 const MONGODB_URI = process.env.MONGODB_URI;
+
+mongoose.connect(MONGODB_URI , { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }
+);
+mongoose.connect('mongodb://localhost:27017/TheFlowerBed'), () => {
+  console.log('The connection with mongod is established');
+}
 //MIDDLEWARE
 
 app.use(
@@ -179,11 +190,7 @@ app.put('/:_id/follow', async (req,res)=>{
 })
 
 
-mongoose.connect(MONGODB_URI , { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }
-);
-mongoose.connect('mongodb://localhost:27017/TheFlowerBed'), () => {
-  console.log('The connection with mongod is established');
-}
+
 
 app.listen(3000, () => {
   console.log('listening...');
