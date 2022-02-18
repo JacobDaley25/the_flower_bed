@@ -20,7 +20,7 @@ const bodyParser = require('body-parser')
 const Leaf = require('./models/leafSchema.js')
 const LeafSeed = require('./models/seed.js')
 const User = require('./models/users.js')
-const db = mongoose.connection
+const db = mongoose.connection;
 require('dotenv').config()
 
 
