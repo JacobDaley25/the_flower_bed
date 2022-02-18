@@ -189,6 +189,6 @@ app.put('/:_id/follow', async (req,res)=>{
 
 
 
-app.listen(process.emv.PORT || 3000, () => {
+app.listen(PORT, () => {
   console.log('listening...');
 })
