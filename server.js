@@ -90,11 +90,11 @@ app.get('/TheFlowerBed/MyProfile/:_id/myLeaves', isAuthenticated, (req,res) => {
     console.log('havent coded yet');
   }
 })
-// app.put('/TheFlowerBed/:_id', isAuthenticated, (req, res) => {
-//   Leaf.findByIdAndUpdate(req.params._id,req.body,{new:true}, (error, updatedModel) => {
-//     res.redirect('/TheFlowerBed')
-//   })
-// })
+app.put('/TheFlowerBed/:_id', isAuthenticated, (req, res) => {
+  Leaf.findByIdAndUpdate(req.params._id,req.body,{new:true}, (error, updatedModel) => {
+    res.redirect('/TheFlowerBed')
+  })
+})
 
 app.delete('/TheFlowerBed/:_id', isAuthenticated, (req, res) => {
   if(Leaf.userId === req.body.userId){
